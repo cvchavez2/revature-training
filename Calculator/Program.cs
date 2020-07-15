@@ -43,7 +43,7 @@ namespace Calculator
     static double GetNum1()
     {
       System.Console.Write("enter first num: ");
-      var num1 = 1D;
+      var num1;
       if (double.TryParse(Console.ReadLine(), out num1))
       { // tryparse will return a boolean
         System.Console.WriteLine("valid");
@@ -53,6 +53,8 @@ namespace Calculator
         num1 = -1D;
         System.Console.WriteLine("digit not valid, providing default {0}", num1);
       }
+      System.Console.WriteLine("DIGIT: {0}", num1);
+
       return num1;
     }
     static double GetNum2()
