@@ -16,22 +16,22 @@ namespace Calculator
         System.Console.WriteLine("3 for *");
         System.Console.WriteLine("4 for /");
         System.Console.Write("enter operation: ");
-        string operation = Console.ReadLine();
+        var operation = Console.ReadLine();
 
-        double result = 0;
+        var result = 0D;
         switch (operation)
         {
           case "1":
-            result = GetNum1() + GetNum2();
+            result = GetNum("first") + GetNum("second");
             break;
           case "2":
-            result = GetNum1() - GetNum2();
+            result = GetNum("first") + GetNum("second");
             break;
           case "3":
-            result = GetNum1() * GetNum2();
+            result = GetNum("first") + GetNum("second");
             break;
           case "4":
-            result = GetNum1() / GetNum2();
+            result = GetNum("first") + GetNum("second");
             break;
           default:
             stay = false;
@@ -40,37 +40,24 @@ namespace Calculator
         System.Console.WriteLine("result: {0} \n", result);
       } while (stay);
     }
-    static double GetNum1()
+    static double GetNum(string s)
     {
-      System.Console.Write("enter first num: ");
-      var num1;
-      if (double.TryParse(Console.ReadLine(), out num1))
-      { // tryparse will return a boolean
-        System.Console.WriteLine("valid");
-      }
-      else
+      var isValid = true;
+      double num1;
+      do
       {
-        num1 = -1D;
-        System.Console.WriteLine("digit not valid, providing default {0}", num1);
-      }
-      System.Console.WriteLine("DIGIT: {0}", num1);
-
+        System.Console.Write("enter {0} num: ", s);
+        if (double.TryParse(Console.ReadLine(), out num1))
+        { 
+          System.Console.WriteLine("valid");
+        }
+        else
+        {
+          System.Console.WriteLine("value not valid, provide valid value");
+          isValid = false;
+        }
+      } while (!isValid);
       return num1;
-    }
-    static double GetNum2()
-    {
-      var num2 = -1D;
-      System.Console.Write("enter second num: ");
-      if (double.TryParse(Console.ReadLine(), out num2))
-      {
-        System.Console.WriteLine("valid");
-      }
-      else
-      {
-        num2 = -1D;
-        System.Console.WriteLine("digit not valid, providing default {0}", num2);
-      }
-      return num2;
     }
   }
 }
