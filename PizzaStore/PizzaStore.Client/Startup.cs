@@ -1,12 +1,11 @@
 using System;
-using System.Collections.Generic;
 using PizzaStore.Domain.Models;
 
 namespace PizzaStore.Client
 {
-  internal class Startup
+  public class Startup
   {
-    internal Order CreateOrder(User user, Store store)
+    public Order CreateOrder(User user, Store store)
     {
       try
       {
@@ -34,6 +33,7 @@ namespace PizzaStore.Client
         System.Console.WriteLine("Select 4 for Custom Pizza");
         System.Console.WriteLine("Select 5 to show Cart");
         System.Console.WriteLine("Select 6 to Exit");
+        System.Console.WriteLine("Select 7 to Read File");
         System.Console.WriteLine();
     }
   }

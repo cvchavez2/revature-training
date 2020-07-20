@@ -9,19 +9,20 @@ namespace PizzaStore.Domain.Models
     // fields
     // private readonly string _imageUrl = "";
     // string Size = "";
+    // string _imageUrl = "";
     List<string> _toppings = new List<string>();
-    string Crust = "";
 
     // properties same as mutarors and accessors
     public string ImageUrl { get; }
-    public string Size { get; set; }
+    public string Size { get; }
     public List<string> Toppings
     {
       get
       {
-        return _toppings;
+        return _toppings; // backing file
       }
     }
+    public string Crust{get; }
 
     // methods
     void AddToppings(string topping)
@@ -48,6 +49,10 @@ namespace PizzaStore.Domain.Models
       Size = size;
       Toppings.AddRange(toppings);
       Crust = crust;
+
+    }
+    public Pizza()
+    {
 
     }
     // finalizers or destructors

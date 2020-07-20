@@ -194,8 +194,14 @@ namespace PizzaStore.Client
             DisplayCart3(cart);
             break;
           case 6:
+            var fileManagerWriter = new FileManager();
+            fileManagerWriter.Write(cart);
             System.Console.WriteLine("exit menu, thank you");
             exit = true;
+            break;
+          case 7:
+            var fileManagerReader = new FileManager();
+            DisplayCart3(fileManagerReader.Read());
             break;
         }
         System.Console.WriteLine();
