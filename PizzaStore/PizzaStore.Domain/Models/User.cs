@@ -10,5 +10,6 @@ namespace PizzaStore.Domain.Models
     {
       Orders = new List<Order>();
     }
+
   }
 }

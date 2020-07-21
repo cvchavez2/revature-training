@@ -174,19 +174,19 @@ namespace PizzaStore.Client
         switch (select)
         {
           case 1:
-            cart.CreatePizza("unknown", "L", new List<string> { "ran", "jal" }, "stuffed" );
+            cart.CreatePizza("cheese", "L", new List<string> { "ran", "jal" }, "stuffed" );
             System.Console.WriteLine("added Cheese Pizza");
             break;
           case 2:
-            cart.CreatePizza("unknown", "L", new List<string> { "ran", "jal" }, "stuffed");
+            cart.CreatePizza("pepperoni", "L", new List<string> { "ran", "jal" }, "stuffed");
             System.Console.WriteLine("added Pepperoni Pizza");
             break;
           case 3:
-            cart.CreatePizza("unknown", "L", new List<string> { "ran", "jal" }, "stuffed");
+            cart.CreatePizza("hawaiian", "L", new List<string> { "ran", "jal" }, "stuffed");
             System.Console.WriteLine("added Hawaiian Pizza");
             break;
           case 4:
-            cart.CreatePizza("unknown", "L", new List<string> { "ran", "jal" }, "stuffed");
+            cart.CreatePizza("custom", "L", new List<string> { "ran", "jal" }, "stuffed");
             System.Console.WriteLine("added Custom");
             break;
           case 5:
